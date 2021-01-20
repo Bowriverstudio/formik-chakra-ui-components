@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1607649154570" clover="3.2.0">
+  <project timestamp="1607649154570" name="All files">
+    <metrics statements="33" coveredstatements="33" conditionals="13" coveredconditionals="5" methods="8" coveredmethods="7" elements="54" coveredelements="45" complexity="0" loc="33" ncloc="33" packages="2" files="4" classes="4"/>
+    <package name="formik-chakra-ui-components">
+      <metrics statements="26" coveredstatements="26" conditionals="13" coveredconditionals="5" methods="6" coveredmethods="6"/>
+      <file name="checkbox.tsx" path="/Users/mauricetadros/Development/Local/mindbloome/app/public/wp-content/themes/mindbloome-single/frontity/packages/formik-chakra-ui-components/checkbox.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="3" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+      </file>
+      <file name="formikInput.tsx" path="/Users/mauricetadros/Development/Local/mindbloome/app/public/wp-content/themes/mindbloome-single/frontity/packages/formik-chakra-ui-components/formikInput.tsx">
+        <metrics statements="9" coveredstatements="9" conditionals="5" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="25" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="42" count="1" type="stmt"/>
+      </file>
+      <file name="textArea.tsx" path="/Users/mauricetadros/Development/Local/mindbloome/app/public/wp-content/themes/mindbloome-single/frontity/packages/formik-chakra-ui-components/textArea.tsx">
+        <metrics statements="9" coveredstatements="9" conditionals="5" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="24" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="46" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="formik-chakra-ui-components.utils">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="testingWrapper.tsx" path="/Users/mauricetadros/Development/Local/mindbloome/app/public/wp-content/themes/mindbloome-single/frontity/packages/formik-chakra-ui-components/utils/testingWrapper.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="25" count="6" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

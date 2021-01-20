@@ -1,0 +1,28 @@
+{
+    "name": "formik-chakra-ui-components",
+    "version": "1.0.0",
+    "description": "Formik formatted with Chakra UI",
+    "keywords": [
+        "formik",
+        "Chakra UI"
+    ],
+    "homepage": "https://frontity.org",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://community.frontity.org"
+    },
+    "scripts": {
+        "test:ci": "../../node_modules/.bin/jest --ci --coverage",
+        "test": "../../node_modules/.bin/jest --watch",
+        "test:inspect": "node --inspect ../../node_modules/jest/bin/jest.js --watch --no-cache --runInBand"
+    },
+    "dependencies": {
+        "formik": "^2.2.4",
+        "framer-motion": "^2.9.4",
+        "@chakra-ui/core": "^1.0.0-rc.8",
+        "react-icons": "^3.11.0"
+    },
+    "devDependencies": {
+        "yup": "^0.29.3"
+    }
+}

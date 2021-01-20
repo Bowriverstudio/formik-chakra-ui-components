@@ -1,0 +1,59 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+  Description,
+} from "@storybook/addon-docs/blocks";
+import TextArea from "../textArea";
+import TestingWrapper from "../utils/testingWrapper";
+import * as Yup from "yup";
+const initialValues = {
+  message: "",
+};
+const validationSchema = Yup.object({
+  message: Yup.string().required("We need a message"),
+});
+
+<Meta
+  title="Packages/Formik Chakra Ui Components/TextArea"
+  component={TextArea}
+/>
+
+# TextArea
+
+<Description of={TextArea} />
+
+#
+
+<Canvas>
+  <Story name="TextArea">
+    <TestingWrapper
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+    >
+      <TextArea label="Message" name="message" />
+    </TestingWrapper>
+  </Story>
+</Canvas>
+
+## With Placeholder
+
+<Canvas>
+  <Story name="TextArea-Placeholder">
+    <TestingWrapper
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+    >
+      <TextArea
+        label="Message"
+        name="message"
+        placeHolder="Write a message please"
+      />
+    </TestingWrapper>
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={TextArea} />

@@ -1,0 +1,97 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+  Description,
+} from "@storybook/addon-docs/blocks";
+import FormikInput from "../formikInput";
+import * as Yup from "yup";
+import TestingWrapper from "../utils/testingWrapper";
+const validationSchema = Yup.object({
+  yourname: Yup.string().required("Name is required"),
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
+  password: Yup.string().required("Name is required"),
+});
+
+<Meta
+  title="Packages/Formik Chakra Ui Components/FormikFormikInputs"
+  component={FormikInput}
+/>
+
+# FormikInput
+
+<Description of={FormikInput} />
+
+<Canvas>
+  <Story name="FormikInputs Name">
+    <TestingWrapper
+      initialValues={{ yourname: "" }}
+      validationSchema={validationSchema}
+    >
+      <FormikInput name="yourname"></FormikInput>
+      <br />
+      <FormikInput label="Name" name="yourname"></FormikInput>
+      <br />
+      <FormikInput
+        label="Name"
+        placeHolder="Name"
+        name="yourname"
+      ></FormikInput>
+    </TestingWrapper>
+  </Story>
+</Canvas>
+
+## Password
+
+<Canvas>
+  <Story name="FormikInputs Password">
+    <TestingWrapper
+      initialValues={{ password: "" }}
+      validationSchema={validationSchema}
+    >
+      <FormikInput type="password" name="password"></FormikInput>
+      <br />
+      <FormikInput
+        type="password"
+        label="Password"
+        name="password"
+      ></FormikInput>
+      <br />
+      <FormikInput
+        type="password"
+        label="Password"
+        placeHolder="Password"
+        name="password"
+      ></FormikInput>
+    </TestingWrapper>
+  </Story>
+</Canvas>
+
+## Email
+
+<Canvas>
+  <Story name="FormikInputs Email">
+    <TestingWrapper
+      initialValues={{ email: "" }}
+      validationSchema={validationSchema}
+    >
+      <FormikInput type="email" name="email"></FormikInput>
+      <br />
+      <FormikInput type="email" label="Email" name="email"></FormikInput>
+      <br />
+      <FormikInput
+        type="email"
+        label="Email"
+        placeHolder="Email"
+        name="email"
+      ></FormikInput>
+    </TestingWrapper>
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={FormikInput} />

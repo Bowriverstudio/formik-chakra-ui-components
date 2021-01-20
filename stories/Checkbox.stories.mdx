@@ -1,0 +1,41 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+  Description,
+} from "@storybook/addon-docs/blocks";
+import Checkbox from "../checkbox";
+import * as Yup from "yup";
+import TestingWrapper from "../utils/testingWrapper";
+const validationSchema = Yup.object({
+  termsOfService: Yup.boolean()
+    .required("The terms and conditions must be accepted.")
+    .oneOf([true], "The terms and conditions must be accepted."),
+});
+
+<Meta
+  title="Packages/Formik Chakra Ui Components/Checkbox"
+  component={Checkbox}
+/>
+
+# Checkbox
+
+<Description of={Checkbox} />
+
+<Canvas>
+  <Story name="Checkbox">
+    <TestingWrapper
+      initialValues={{ termsOfService: false }}
+      validationSchema={validationSchema}
+    >
+      <Checkbox name="termsOfService">
+        I agree to the <a href="/privacy-policy/">Privacy Policy</a>
+      </Checkbox>
+    </TestingWrapper>
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Checkbox} />

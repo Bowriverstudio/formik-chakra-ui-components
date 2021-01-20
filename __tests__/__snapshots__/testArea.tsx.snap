@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Formik Chakra Ui Components TextArea 1`] = `
+<div
+  className="chakra-container css-1plwrig"
+>
+  <div>
+    <form
+      action="#"
+      noValidate={true}
+      onReset={[Function]}
+      onSubmit={[Function]}
+    >
+      <div
+        className="chakra-form-control css-1kxonj9"
+        role="group"
+      >
+        <label
+          className="chakra-form__label css-1ig2arj"
+          htmlFor="email"
+          id="field-1-label"
+        />
+        <div
+          className="chakra-input__group css-4302v8"
+        >
+          <textarea
+            className="chakra-textarea css-0"
+            disabled={false}
+            id="termsOfService"
+            name="termsOfService"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            readOnly={false}
+            required={false}
+            value={false}
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
