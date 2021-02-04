@@ -6,7 +6,7 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import { Field } from "formik";
 import React from "react";
 import { FaExclamationTriangle } from "react-icons/fa";
@@ -14,7 +14,8 @@ import { FaExclamationTriangle } from "react-icons/fa";
 import { FormikFieldController } from "./types";
 type Props = FormikFieldController & { type?: "email" | "password" };
 /**
- * Input
+ * Input.
+ * @param props - FormikFieldController plus rest which is passed to the Input.
  */
 const FormikInput: React.FC<Props> = (props) => {
   const { label, name, placeholder, ...rest } = props;

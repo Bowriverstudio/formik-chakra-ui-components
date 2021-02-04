@@ -1,13 +1,13 @@
-import { Container } from "@chakra-ui/core";
+import { Container } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import React from "react";
 type TestingWrapperProps = {
   /**
-   * Formik components
+   * Formik components.
    */
   children: JSX.Element[] | JSX.Element;
   /**
-   * The initial values of the children components
+   * The initial values of the children components.
    */
   initialValues: Record<string, string | boolean | number>;
   /**
@@ -25,7 +25,7 @@ const TestingWrapper = ({
   const onSubmit = (
     _values: Record<string, string | boolean | number>, // eslint-disable-line @typescript-eslint/no-unused-vars
     _formikActions: unknown // eslint-disable-line @typescript-eslint/no-unused-vars
-  ) => {}; // eslint-disable-line @typescript-eslint/no-empty-function
+  ) => { }; // eslint-disable-line @typescript-eslint/no-empty-function
 
   return (
     <Container>

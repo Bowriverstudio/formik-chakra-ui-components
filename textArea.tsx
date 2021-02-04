@@ -6,14 +6,15 @@ import {
   InputGroup,
   InputRightElement,
   Textarea,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import { Field } from "formik";
 import React from "react";
 import { FaExclamationTriangle } from "react-icons/fa";
 
 import { FormikFieldController } from "./types";
 /**
- * TextArea
+ * TextArea.
+ * @param props - FormikFieldController plus rest which is passed to the Textarea.
  */
 const TextArea: React.FC<FormikFieldController> = (props) => {
   const { label, name, placeholder, ...rest } = props;

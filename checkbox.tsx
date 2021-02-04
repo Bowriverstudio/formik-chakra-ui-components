@@ -1,10 +1,11 @@
-import { Checkbox, FormControl, FormErrorMessage } from "@chakra-ui/core";
+import { Checkbox, FormControl, FormErrorMessage } from "@chakra-ui/react";
 import { Field } from "formik";
 import React from "react";
 
 import { FormikFieldController } from "./types";
 /**
- * Checkbox
+ * Checkbox.
+ * @param props - FormikFieldController plus rest which is passed to the Checkbox.
  */
 const FormikCheckbox: React.FC<FormikFieldController> = (props) => {
   const { name, children, ...rest } = props;
