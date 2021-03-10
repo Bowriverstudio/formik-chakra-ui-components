@@ -1,27 +1,48 @@
-import { Checkbox, FormControl, FormErrorMessage } from "@chakra-ui/react";
-import { Field } from "formik";
-import React from "react";
-
-import { FormikFieldController } from "./types";
 /**
- * Checkbox.
- * @param props - FormikFieldController plus rest which is passed to the Checkbox.
+ * External dependencies
  */
-const FormikCheckbox: React.FC<FormikFieldController> = (props) => {
-  const { name, children, ...rest } = props;
+import { Field, ErrorMessage } from "formik";
+
+/**
+ * React / Frontity dependencies
+ */
+import React from "react";
+import {
+  Checkbox,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  Icon,
+  Input,
+  InputGroup,
+  InputRightElement,
+} from "@chakra-ui/react";
+import { FaExclamationTriangle } from "react-icons/fa";
+
+import { FormikFieldController } from "formik-chakra-ui-components/types";
+
+/**
+ * Select
+ */
+const FormikCheckbox = (props) => {
+  const { label, name, ...rest } = props;
+
+
   return (
     <Field name={name}>
       {({ field, form }) => (
-        <FormControl isInvalid={form.errors[name]}>
-          <Checkbox {...field} id={name} {...rest}>
-            {children}
-          </Checkbox>
-          {form.errors[name] && form.submitCount > 0 && (
-            <FormErrorMessage>{form.errors[name]}</FormErrorMessage>
-          )}
+        <FormControl isInvalid={form.errors[name] && form.touched[name]}>
+          <FormLabel htmlFor={name}>{label}</FormLabel>
+          <InputGroup>
+            <Checkbox name={name}></Checkbox>
+          </InputGroup>
+          <FormErrorMessage>{form.errors[name]}</FormErrorMessage>
         </FormControl>
       )}
     </Field>
+
   );
 };
+
+
 export default FormikCheckbox;

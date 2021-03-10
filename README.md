@@ -16,7 +16,7 @@ Usage - here is a simple contact us form using frontity, chakra and formik, and 
  * External dependencies
  */
 
-import { Alert, AlertIcon, Box, Button, Link } from "@chakra-ui/core";
+import { Alert, AlertIcon, Box, Button, Link } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import FormikInput from "formik-chakra-ui-components/formikInput";
 import FormikTextArea from "formik-chakra-ui-components/textArea";

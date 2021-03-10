@@ -14,3 +14,49 @@ export type FormikFieldController = ThemingProps & {
    */
   placeholder?: string;
 };
+
+
+export type FormikSchema = Array<FormikSchemaField>
+export interface FormikProps {
+
+  type?: string;
+
+  placeholder?: string;
+  label?: string;
+  options?: Array<{ option: string; value: string; }>;
+}
+export interface FormikSchemaField {
+
+  /**
+   * Used in FormikControl, to select the correct component.
+   */
+  control: 'input' | 'textarea' | 'select' | 'checkbox'
+  /**
+      * The name.
+      */
+  name: string;
+  /**
+   * Props passed to Formik Component.
+   */
+  formikProps: FormikProps;
+
+  /**
+   * Validation
+   */
+  required?: boolean;
+  validationType?: "string" | "number";
+
+  validations?: Array<YupValidation>
+
+  /**
+   * Default initial value.
+   */
+  value?: any;
+
+}
+
+export interface YupValidation {
+  type: string;
+  value?: string;
+  error_message?: string;
+}
