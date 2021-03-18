@@ -1,4 +1,4 @@
-mport { FormikSchema, FormikSchemaField } from "../../../types";
+import { FormikSchema, FormikSchemaField } from "../../../types";
 import * as Yup from "yup";
 /**
  * Creates the Initial values from the configuration.
