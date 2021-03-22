@@ -26,10 +26,10 @@ function _createYupSchema(schema, config: FormikSchemaField) {
 
     const { name, validationType, validations = [] } = config;
 
-    if (!yup[validationType]) {
+    if (!Yup[validationType]) {
         return schema;
     }
-    let validator = yup[validationType]();
+    let validator = Yup[validationType]();
     validations.forEach(validation => {
         console.log("validation", validation)
         const { value, error_message, type } = validation;
