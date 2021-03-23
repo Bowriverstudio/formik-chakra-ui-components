@@ -6,12 +6,19 @@ import * as Yup from "yup";
  * Usage:
  * 
  * @param schema 
+ * 
  * @returns { {['name']: value}}
  */
-export function createInitialValues(schema: FormikSchema) {
+export function createInitialValues(schema: FormikSchema, override) {
     const initialValues = {};
     schema.forEach(item => {
-        initialValues[item.name] = item.value || "";
+        let overrideValue = ""
+        if (override) {
+            if ((item.name in override)) {
+                overrideValue = override[item.name]
+            }
+        }
+        initialValues[item.name] = overrideValue || item.value || ""
     });
 
     return initialValues;
