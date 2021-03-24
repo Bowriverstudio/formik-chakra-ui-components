@@ -1,5 +1,19 @@
-import { FormikSchema, FormikSchemaField } from "../../../types";
+import { FormikSchema, FormikSchemaField } from "./types";
 import * as Yup from "yup";
+
+type InitialValueProps = {
+
+
+    /**
+     * Schema
+     */
+    schema: FormikSchema;
+
+    /**
+     * Optional Values to override the intial value 
+     */
+    override: any;
+}
 /**
  * Creates the Initial values from the configuration.
  * 
@@ -9,9 +23,10 @@ import * as Yup from "yup";
  * 
  * @returns { {['name']: value}}
  */
-export function createInitialValues(schema: FormikSchema, override) {
+export function createInitialValues({ schema, override }: InitialValueProps) {
     const initialValues = {};
     schema.forEach(item => {
+        // TODO clean this logic up. It works but can be more readable.
         let overrideValue = ""
         if (override) {
             if ((item.name in override)) {
@@ -38,14 +53,12 @@ function _createYupSchema(schema, config: FormikSchemaField) {
     }
     let validator = Yup[validationType]();
     validations.forEach(validation => {
-        console.log("validation", validation)
         const { value, error_message, type } = validation;
         if (!validator[type]) {
             return;
         }
         if (type === 'required') {
             validator = validator[type](error_message);
-
         } else {
             validator = validator[type](value, error_message);
         }
