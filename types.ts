@@ -13,6 +13,11 @@ export type FormikFieldController = ThemingProps & {
    * Optional placeholder.
    */
   placeholder?: string;
+
+  /**
+   * Number of Rows in textarea.
+   */
+  rows?: number;
 };
 
 

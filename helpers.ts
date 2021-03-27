@@ -12,7 +12,7 @@ type InitialValueProps = {
     /**
      * Optional Values to override the intial value 
      */
-    override: any;
+    override?: any;
 }
 /**
  * Creates the Initial values from the configuration.
@@ -46,23 +46,30 @@ export function createYupSchema(schema: FormikSchema) {
 // Code taken from: https://codesandbox.io/s/clever-snyder-1u410?fontsize=14&file=/src/yupSchemaCreator.js:0-485
 function _createYupSchema(schema, config: FormikSchemaField) {
 
-    const { name, validationType, validations = [] } = config;
+    const { name, required, validationType, validations = [] } = config;
 
     if (!Yup[validationType]) {
         return schema;
     }
     let validator = Yup[validationType]();
-    validations.forEach(validation => {
-        const { value, error_message, type } = validation;
-        if (!validator[type]) {
-            return;
-        }
-        if (type === 'required') {
-            validator = validator[type](error_message);
-        } else {
-            validator = validator[type](value, error_message);
-        }
-    });
+
+    if (validations.length > 0) {
+        validations.forEach(validation => {
+            const { value, error_message, type } = validation;
+            if (!validator[type]) {
+                return;
+            }
+            if (type === 'required') {
+                validator = validator[type](error_message);
+            } else {
+                validator = validator[type](value, error_message);
+            }
+        });
+    } else if (required) {
+        // The validations is empty but it is required.  Adding default
+        validator = validator['required']('Field is required.');
+    }
+
     schema[name] = validator;
     return schema;
 }
