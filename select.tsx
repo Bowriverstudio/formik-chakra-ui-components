@@ -19,13 +19,13 @@ import {
 } from "@chakra-ui/react";
 import { FaExclamationTriangle } from "react-icons/fa";
 
-import { FormikFieldController } from "types";
+import { FormikFieldController } from "./types";
 
 /**
  * Select
  */
 const FormikSelect: React.FC<FormikFieldController> = (props) => {
-  const { label, name, placeholder, options, ...rest } = props;
+  const { label, name, placeholder, options, children, ...rest } = props;
 
   return (
     <Field name={name}>
@@ -34,13 +34,14 @@ const FormikSelect: React.FC<FormikFieldController> = (props) => {
           <FormLabel htmlFor={name}>{label}</FormLabel>
           <InputGroup>
             <Select {...field} id={name} placeholder={placeholder} {...rest} >
-              {options.map(({ value, option }) => {
+              {options && options.map(({ value, option }) => {
                 return (
                   <option key={value} value={value}>
                     {option}
                   </option>
                 );
               })}
+              {children}
             </Select>
             {form.errors[name] && form.touched[name] && (
               <InputRightElement>

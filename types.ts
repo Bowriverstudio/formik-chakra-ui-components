@@ -35,7 +35,7 @@ export interface FormikSchemaField {
   /**
    * Used in FormikControl, to select the correct component.
    */
-  control: 'input' | 'textarea' | 'select' | 'checkbox'
+  control: 'input' | 'textarea' | 'select' | 'checkbox' | 'none'
   /**
       * The name.
       */
