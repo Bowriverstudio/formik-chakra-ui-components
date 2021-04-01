@@ -44,7 +44,14 @@ export function createYupSchema(schema: FormikSchema) {
     return Yup.object().shape(yepSchema);
 }
 // Code taken from: https://codesandbox.io/s/clever-snyder-1u410?fontsize=14&file=/src/yupSchemaCreator.js:0-485
-function _createYupSchema(schema, config: FormikSchemaField) {
+/**
+ *   Sample of custom usage: 
+ *   const yepSchema = personalSchema.reduce(_createYupSchema, {});
+ *   yepSchema['country'] = Yup.mixed().notOneOf(['None'])
+ *   yepSchema['region'] = Yup.mixed().notOneOf(['None'])
+ *   const validationSchema = Yup.object().shape(yepSchema);
+ */
+export function _createYupSchema(schema, config: FormikSchemaField) {
 
     const { name, required, validationType, validations = [] } = config;
 
