@@ -29,13 +29,14 @@ export interface FormikProps {
   placeholder?: string;
   label?: string;
   options?: Array<{ option: string; value: string; }>;
+  rows?: number;
 }
 export interface FormikSchemaField {
 
   /**
    * Used in FormikControl, to select the correct component.
    */
-  control: 'input' | 'textarea' | 'select' | 'checkbox' | 'none'
+  control: 'input' | 'textarea' | 'select' | 'switch' | 'checkbox' | 'price' | 'none'
   /**
       * The name.
       */
