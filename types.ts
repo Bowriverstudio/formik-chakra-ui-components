@@ -18,6 +18,8 @@ export type FormikFieldController = ThemingProps & {
    * Number of Rows in textarea.
    */
   rows?: number;
+
+  width?: string;
 };
 
 

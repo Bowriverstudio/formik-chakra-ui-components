@@ -25,12 +25,12 @@ import { FormikFieldController } from "./types";
  * Select
  */
 const FormikSelect: React.FC<FormikFieldController> = (props) => {
-  const { label, name, placeholder, options, children, ...rest } = props;
+  const { label, name, placeholder, options, width, children, ...rest } = props;
 
   return (
     <Field name={name}>
       {({ field, form }) => (
-        <FormControl isInvalid={form.errors[name] && form.touched[name]}>
+        <FormControl isInvalid={form.errors[name] && form.touched[name]} width={width !== undefined ? width : "100%"}>
           <FormLabel htmlFor={name}>{label}</FormLabel>
           <InputGroup>
             <Select {...field} id={name} placeholder={placeholder} {...rest} >
@@ -56,6 +56,5 @@ const FormikSelect: React.FC<FormikFieldController> = (props) => {
 
   );
 };
-
 
 export default FormikSelect;
